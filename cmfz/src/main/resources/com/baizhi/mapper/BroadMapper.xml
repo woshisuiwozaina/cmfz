@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.BroadDao">
+
+    <select id="queryAll" resultType="BroadCast">
+        select *
+        from BroadCast
+
+    </select>
+
+    <update id="set">
+        update BroadCast set
+        status=#{broad.status}
+        WHERE id = #{broad.id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM BroadCast
+        WHERE id=#{id}
+    </delete>
+
+    <insert id="insert" parameterType="BroadCast">
+        INSERT INTO BroadCast
+        VALUES
+        (#{id} , #{title} , #{imgPath} , #{desc}  , #{status} , #{date})
+    </insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

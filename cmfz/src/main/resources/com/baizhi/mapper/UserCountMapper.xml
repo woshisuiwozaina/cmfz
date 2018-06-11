@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.baizhi.dao.UserCountDao">
+
+    <select id="queryDays" resultType="UserCount">
+        <![CDATA[
+            select COUNT(*) count  from user
+            where to_days(now()) - to_days(date) <= #{days}
+        ]]>
+    </select>
+
+    <select id="queryByAddress" resultType="China">
+        select COUNT(*) value  from user
+        WHERE province=#{province}
+        and sex=#{sex}
+    </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
